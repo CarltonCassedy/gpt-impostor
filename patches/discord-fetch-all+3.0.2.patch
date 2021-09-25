@@ -1,0 +1,32 @@
+diff --git a/node_modules/discord-fetch-all/src/functions/fetchMessages.js b/node_modules/discord-fetch-all/src/functions/fetchMessages.js
+index fde89c4..9fa047d 100644
+--- a/node_modules/discord-fetch-all/src/functions/fetchMessages.js
++++ b/node_modules/discord-fetch-all/src/functions/fetchMessages.js
+@@ -6,19 +6,21 @@ exports.default = async (channel, options = { reverseArray: false, userOnly: fal
+     const { reverseArray, userOnly, botOnly, pinnedOnly } = options;
+     let messages = [];
+     let lastID;
+-    while (true) { // eslint-disable-line no-constant-condition
++    for (let i = 0; i < 20; i++) { // eslint-disable-line no-constant-condition
+         const fetchedMessages = await channel.messages.fetch({
+             limit: 100,
+             ...(lastID && { before: lastID }),
+         });
+         if (fetchedMessages.size === 0) {
+-            if (reverseArray) {messages = messages.reverse();}
+-            if (userOnly) {messages = messages.filter(msg => !msg.author.bot);}
+-            if (botOnly) {messages = messages.filter(msg => msg.author.bot);}
+-            if (pinnedOnly) {messages = messages.filter(msg => msg.pinned);}
+-            return messages;
++            break;
+         }
+         messages = messages.concat(Array.from(fetchedMessages.values()));
+         lastID = fetchedMessages.lastKey();
++        console.log(lastID)
+     }
++    if (reverseArray) {messages = messages.reverse();}
++            if (userOnly) {messages = messages.filter(msg => !msg.author.bot);}
++            if (botOnly) {messages = messages.filter(msg => msg.author.bot);}
++            if (pinnedOnly) {messages = messages.filter(msg => msg.pinned);}
++            return messages;
+ };

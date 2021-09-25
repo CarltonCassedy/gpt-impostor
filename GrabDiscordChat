@@ -1,0 +1,4000 @@
+
+####
+"""
+for windows download:
+    step 1:
+    https://www.downloadsource.net/how-to-download-discord-channel-and-direct-message-dm-history/n/14222/
+    step 2:
+    https://github.com/Tyrrrz/DiscordChatExporter
+    (there should be a link to download .net)
+    step 3:
+    type into termial:
+    dotnet --info      # makesure runtime installed
+    step 4:
+    cd /.../DiscordChatExporter.CLI
+    step 5:
+    run:
+    dotnet DiscordChatExporter.Cli.dll export
+    parameters:
+
+    -t Get in devolper tools in discord applications. type token into filter and cmd R # token
+    -c left click Channel                                          # channel id
+    -f json                                                          # format
+    
+    step 6:  
+    the json is saved to the local folder DiscordChatExporter.CLI
+
+    step 7: grab json from folder
+    import NAME OF CHANNEL.json
+"""
+#####
+
+def main(json_file):
+    # copy of full chat history 20,000 lines +   
+    chat = json_file
+    
+    # empty list
+    FilteredData = []
+
+    #put messages in list
+    Messages = LIST(chat.key(messages))
+    #loop through messages 
+    for message in Messages:
+        #loop through elements  
+        for elements in messages :
+
+        or 
+        #needed varibles 
+        name = elements.Author
+        date = elements.Timestamp
+        contents = elements.contents
+        #ADD needed data from the message
+        FilteredData.append([name,date,contents])
+
+        return FilteredData
+
+        # SAVE FILTERED DATA TO DRIVE??
+
+
+
+
+"""
+
+{
+      "id": "891005983994810399",
+      "type": "Default",
+      "timestamp": "2021-09-24T16:59:40.675+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Do cool AI shit?",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+}
+
+# EXAMPLE OF FULL JSON FILE DOWNLOADED FROM GRABBER 
+{
+  "guild": {
+    "id": "0",
+    "name": "Direct Messages",
+    "iconUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+  },
+  "channel": {
+    "id": "891005511628124181",
+    "type": "DirectGroupTextChat",
+    "categoryId": "0",
+    "category": "Group",
+    "name": "Cornell Hackathon 2021",
+    "topic": null
+  },
+  "dateRange": {
+    "after": null,
+    "before": null
+  },
+  "messages": [
+    {
+      "id": "891005764880175104",
+      "type": "Default",
+      "timestamp": "2021-09-24T16:58:48.434+00:00",
+      "timestampEdited": "2021-09-24T16:59:14.322+00:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Hey people interested in the discord GPT imposter bot\n\nIf we successfully build this we got the Google prize in the bag",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891005922837680238",
+      "type": "Default",
+      "timestamp": "2021-09-24T16:59:26.094+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "What's the Google prize",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891005983994810399",
+      "type": "Default",
+      "timestamp": "2021-09-24T16:59:40.675+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Do cool AI shit?",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891006013048758303",
+      "type": "Default",
+      "timestamp": "2021-09-24T16:59:47.602+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "“Best use of Google Cloud”",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891006117042331699",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:00:12.396+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Using their TPU tensor accelerators to fine tune lots of models is definitely gonna be the coolest",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891006200584474646",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:00:32.314+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "When the",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891005764880175104",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891006212475355226",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:00:35.149+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Yeah I was also thinking about that prize. We would definitely have a good chance.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891006415110537247",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:01:23.461+00:00",
+      "timestampEdited": "2021-09-24T17:01:29.013+00:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Is Susbot too cringe of a name for the project?",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891006512808460348",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:01:46.754+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Lol",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891006566285852743",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:01:59.504+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I think GPT Imposter is a good balance",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891006647701495888",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:02:18.915+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Any name ideas?",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "256910035852984320",
+          "name": "NQuackenboss",
+          "discriminator": "9404",
+          "nickname": "NQuackenboss",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891006212475355226",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891007023855071262",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:03:48.597+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "What's your experience level with this sort of thing @NQuackenboss? I'm pretty new. My programming experience is mostly academic",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "256910035852984320",
+          "name": "NQuackenboss",
+          "discriminator": "9404",
+          "nickname": "NQuackenboss",
+          "isBot": false
+        }
+      ]
+    },
+    {
+      "id": "891007196169641985",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:04:29.68+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I suck at thinking of names. I created a folder for it just called Discord-gpt lol. Something like what both of you said would work.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891006647701495888",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891007341061881946",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:05:04.225+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Give me like 10 mins. In the middle of something.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "157845259278090240",
+          "name": "Farler",
+          "discriminator": "7853",
+          "nickname": "Farler",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891007023855071262",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891007377413922886",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:05:12.892+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "\uD83D\uDC4D",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891007438914994278",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:05:27.555+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I’m driving to Syracuse so won’t be very responsive unless I get stuck in construction again",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891012220316708954",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:24:27.53+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I'd say I'm fairly experienced at this sort of thing. It's difficult to judge since I've never taken any official AI classes. I'm a freshman and I did a 3 year research project in high school using AI to convert lecture videos to notes. That project led to an internship at an AI chatbot company where I worked with multilingual language models. So I understand some NLP and CV topics pretty well.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "157845259278090240",
+          "name": "Farler",
+          "discriminator": "7853",
+          "nickname": "Farler",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891007023855071262",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891014023410229318",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:31:37.421+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "oh wow",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014258106695680",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:32:33.377+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "im a sophomore",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014545232003092",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:33:41.833+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "outside of the classes I've taken, my experience consists of a short project I did senior year of highschool with a raspberry pi, OCR, and google drive API",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014693643247636",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:34:17.217+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Do you use ReLearn in any of your classes? https://relearn.fyi",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [
+        {
+          "id": "891014693697753138",
+          "url": "https://cdn.discordapp.com/attachments/891005511628124181/891014693697753138/image0.jpg",
+          "fileName": "image0.jpg",
+          "fileSizeBytes": 5300
+        }
+      ],
+      "embeds": [
+        {
+          "title": "ReLearn | Class communities",
+          "url": "https://relearn.fyi/",
+          "timestamp": null,
+          "description": "Record searchable lectures and turn classmates into friends by joining a class-wide, non-stop discussion.",
+          "thumbnail": {
+            "url": "https://images-ext-1.discordapp.net/external/ZXPHyO1hEmgSKO1H1tit0MTiefEJFlykW6eszRV80a8/https/relearn.fyi/static/ReLearnAdWide-3630d12e010a3219939b365ef968b48f.png",
+            "width": 2400,
+            "height": 1252
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "256910035852984320",
+          "name": "NQuackenboss",
+          "discriminator": "9404",
+          "nickname": "NQuackenboss",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891012220316708954",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891014734575456307",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:34:26.976+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "shameless",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014740225191956",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:34:28.323+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "tsk tsk",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014876925943849",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:35:00.915+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "The whoa part is cuz your experience really impressive",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014911197577288",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:35:09.086+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "oh thanks",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014923600146452",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:35:12.043+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "And we do similar stuff at ReLearn to your internship",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014960707170344",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:35:20.89+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "that was a joke btw",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014968365973605",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:35:22.716+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "to be clear",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891014987282260018",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:35:27.226+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Get rekt",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "157845259278090240",
+          "name": "Farler",
+          "discriminator": "7853",
+          "nickname": "Farler",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891014911197577288",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891015821286080542",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:38:46.068+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "lol. I have not used ReLearn. did you create it or something?",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891015890630496317",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:39:02.601+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Yes",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891015956116176916",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:39:18.214+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "discord moment: when you attach a file, it prompts you for text about the file with a box below the preview of the file, but in reality when the message is sent, your text is above the file. unintuitive",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891014876925943849",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891016161809035315",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:40:07.255+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "New project: we build discord, but without that issue",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891016248899563553",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:40:28.019+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "yes, the entirety of discord",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891016277739573309",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:40:34.895+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "EZ",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891016587514101800",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:41:48.751+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "relearn is somewhat related to my high school research, not the internship I think. so relearn indexes lectures using speech-to-text models?",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891016815856209941",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:42:43.192+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Yea, on device so it can be free (alternatives are $1 per hour on cloud)",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891016920382464021",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:43:08.113+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Has a long ways to go though",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891016958781317192",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:43:17.268+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I want to say more",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891016990980972604",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:43:24.945+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "But salt driving",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891017088536281200",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:43:48.204+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Okay I see. neat. Yeah my whole approach was to use both video and audio to summarize the content in the lecture.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891017115040096256",
+      "type": "Reply",
+      "timestamp": "2021-09-24T17:43:54.523+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "got it",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891016990980972604",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891017234649063514",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:44:23.04+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Did you do transcription > BERT?",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891017795192627260",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:46:36.684+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "roughly it is \"bunch of fancy algorithms to get content off the screen\" + \"speech-to-text\" --> your choice of several combination algorithms + your choice of several summarization algorithms/models --> summary. BERT and other language models are used all over the place in the combination and summarization stages.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891018279223717959",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:48:32.086+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Is there a paper?",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891018334353637376",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:48:45.23+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "yeah https://haydenhousen.com/media/lecture2notes-paper-v1.pdf",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891019648143880253",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:53:58.462+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "and, most importantly, there's code https://github.com/HHousen/lecture2notes/",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891019876146237450",
+      "type": "Default",
+      "timestamp": "2021-09-24T17:54:52.822+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Nice",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891029110569177088",
+      "type": "Reply",
+      "timestamp": "2021-09-24T18:31:34.48+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "You're driving to Syracuse right now but you're attending the event in person?",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891007438914994278",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891032616139096074",
+      "type": "Default",
+      "timestamp": "2021-09-24T18:45:30.273+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "yeah he is picking up a new phone",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891032721093165136",
+      "type": "Default",
+      "timestamp": "2021-09-24T18:45:55.296+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "should be back in time",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC4D",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/svg/1f44d.svg"
+          },
+          "count": 1
+        }
+      ],
+      "mentions": []
+    },
+    {
+      "id": "891032774763507783",
+      "type": "Default",
+      "timestamp": "2021-09-24T18:46:08.092+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I take it your name is Hayden btw?",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891032801024032818",
+      "type": "Default",
+      "timestamp": "2021-09-24T18:46:14.353+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I'm Carlton, or Carl if you prefer",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891042885624012881",
+      "type": "Default",
+      "timestamp": "2021-09-24T19:26:18.709+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Yup. I'm Hayden. Nice to meet you Carl.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891050747976876094",
+      "type": "Default",
+      "timestamp": "2021-09-24T19:57:33.24+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Alright got my phone omw back after grabbing food",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891050855065862235",
+      "type": "Default",
+      "timestamp": "2021-09-24T19:57:58.772+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "They let me in early but took 300 years to complete the trade in process",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891057613121421313",
+      "type": "Reply",
+      "timestamp": "2021-09-24T20:24:50.018+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Are you from Syracuse",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "256910035852984320",
+          "name": "NQuackenboss",
+          "discriminator": "9404",
+          "nickname": "NQuackenboss",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891042885624012881",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891058394683826177",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:27:56.357+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Nope. I'm from a super small town like 4 hours from Ithaca called Pawling",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891058424924762213",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:28:03.567+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Aight",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891058448454807612",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:28:09.177+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Syracuse smells like crap",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891058495649091594",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:28:20.429+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Weird thing to say but it’s true",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891058768291463248",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:29:25.432+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Yeah most cities don't smell too good in my experience",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891060367323721728",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:35:46.671+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Nah I mean actual crap",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891061789599596564",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:41:25.768+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I’ll probably be there by 6",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891061882658619473",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:41:47.955+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "ETA to garage is 5:40 but traffic really do be slow rn",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891062441344139355",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:44:01.156+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Got it. I just checked in",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891062497937874966",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:44:14.649+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Can you check others in?",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891062792004722758",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:45:24.76+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I don't believe so. I think all you have to do is talk to an even organizer if you get here after the check-in time",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891062870786330625",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:45:43.543+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "yeah I saw some people in the discord server saying stuff about check in",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891062892777066498",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:45:48.786+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "didnt sound like it was a big deal to be late",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063043394510929",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:46:24.696+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "man I'm gonna have to get my laptop all set up for dev stuff",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063081709498368",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:46:33.831+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "the whole of last year I did all my cs projects on my desktop",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063110687940709",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:46:40.74+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "but I obviously cant bring that to the hackathon",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063320671555605",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:47:30.804+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Oh nice you've got a desktop. I'm laptop only since I move around too much",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063382801801256",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:47:45.617+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "how do you mean?",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063534329430088",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:48:21.744+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Well it's not practical to get a desktop because I spend a lot of time out of my dorm",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063592034652170",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:48:35.502+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "ah",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063680698048514",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:48:56.641+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "well, I for one already had this for a couple years",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [
+        {
+          "emoji": {
+            "id": null,
+            "name": "\uD83D\uDC4D",
+            "isAnimated": false,
+            "imageUrl": "https://twemoji.maxcdn.com/2/svg/1f44d.svg"
+          },
+          "count": 1
+        }
+      ],
+      "mentions": []
+    },
+    {
+      "id": "891063781097111562",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:49:20.578+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I actually just bought a new laptop and had to return it so I'm in a weird transition state.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063861267025931",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:49:39.692+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "and fortunately for me, my roommate basically lives with his girlfriend now, so I am able to do my work here",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063944934985739",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:49:59.64+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Lol nice",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891063976513900584",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:50:07.169+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "k i think imma grab some things and head up there",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891064009388867685",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:50:15.007+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "either of you have a nut allergy?",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891064035586506795",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:50:21.253+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Sounds good. No",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891064145179467846",
+      "type": "Default",
+      "timestamp": "2021-09-24T20:50:47.382+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "our family brownie recipe has walnuts, and my mom by chance sent me a tin of brownies",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891067928047386634",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:05:49.288+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "@NQuackenboss alrighty I've checked in",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "256910035852984320",
+          "name": "NQuackenboss",
+          "discriminator": "9404",
+          "nickname": "NQuackenboss",
+          "isBot": false
+        }
+      ]
+    },
+    {
+      "id": "891067974398640188",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:06:00.339+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I'm wearing a green facemask and orange shirt",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891068373742530580",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:07:35.55+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Are you at the check-in place?",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891068452180217927",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:07:54.251+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I checked in and am in the atrium",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891068568341454858",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:08:21.946+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Alright give me like 5 minutes and I'll be back",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891068613388296242",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:08:32.686+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Don't worry about it lol",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891068767067578408",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:09:09.326+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "We will meet sooner or later",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891073676970184774",
+      "type": "Reply",
+      "timestamp": "2021-09-24T21:28:39.938+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Gluten moment",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "157845259278090240",
+          "name": "Farler",
+          "discriminator": "7853",
+          "nickname": "Farler",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891064145179467846",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891076183985360936",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:38:37.657+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "rip",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891077370121961503",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:43:20.454+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I’m here where are you",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891077767511277648",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:44:55.199+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "in the atrium",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891078637401567232",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:48:22.597+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "@zaptrem in the atrium in the physical sciences building",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ]
+    },
+    {
+      "id": "891078692946739202",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:48:35.84+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Same",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891078767278170155",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:48:53.562+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "are there multiple atriums?",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891078778921562113",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:48:56.338+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Near Goldie’s?",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891078797363933257",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:49:00.735+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "i mean",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891078808055189645",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:49:03.284+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "goldies is closed",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891078840896602164",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:49:11.114+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "but yeah I can see it from where I am sitting",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891078885956022293",
+      "type": "Default",
+      "timestamp": "2021-09-24T21:49:21.857+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I must’ve just walked past you then.",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891085627846709338",
+      "type": "Default",
+      "timestamp": "2021-09-24T22:16:09.249+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://devpost.com/software/384757/joins/vZi6AmZAP3jiGOMyzI1cIg",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891112495098503218",
+      "type": "Default",
+      "timestamp": "2021-09-25T00:02:54.901+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://discord.com/developers/docs/intro",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Discord Developer Portal — API Docs for Bots and Developers",
+          "url": "https://discord.com/developers/docs/intro",
+          "timestamp": null,
+          "description": "Integrate your service with Discord — whether it's a bot or a game or whatever your wildest imagination can come up with.",
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891112602615312385",
+      "type": "Default",
+      "timestamp": "2021-09-25T00:03:20.535+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "@zaptrem https://xkcd.com/949/",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "xkcd: File Transfer",
+          "url": "https://xkcd.com/949/",
+          "timestamp": null,
+          "description": "",
+          "image": {
+            "url": "https://images-ext-1.discordapp.net/external/vr3NBFmW0WgT2HjZtZueXZ_zMIQChsam6OqjGhnWXNk/https/imgs.xkcd.com/comics/file_transfer.png",
+            "width": 456,
+            "height": 614
+          },
+          "footer": {
+            "text": "Every time you email a file to yourself so you can pull it up on your friend's laptop, Tim Berners-Lee sheds a single tear."
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ]
+    },
+    {
+      "id": "891114002812371035",
+      "type": "RecipientAdd",
+      "timestamp": "2021-09-25T00:08:54.368+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Added a recipient.",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "891113015477407794",
+          "name": "Yusef rahimzada",
+          "discriminator": "4345",
+          "nickname": "Yusef rahimzada",
+          "isBot": false
+        }
+      ]
+    },
+    {
+      "id": "891114041114759188",
+      "type": "Default",
+      "timestamp": "2021-09-25T00:09:03.5+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "hey",
+      "author": {
+        "id": "891113015477407794",
+        "name": "Yusef rahimzada",
+        "discriminator": "4345",
+        "nickname": "Yusef rahimzada",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891114061293576272",
+      "type": "Default",
+      "timestamp": "2021-09-25T00:09:08.311+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "hello",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891114123084042282",
+      "type": "ChannelNameChange",
+      "timestamp": "2021-09-25T00:09:23.043+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Changed the channel name.",
+      "author": {
+        "id": "891113015477407794",
+        "name": "Yusef rahimzada",
+        "discriminator": "4345",
+        "nickname": "Yusef rahimzada",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891128319586754570",
+      "type": "Default",
+      "timestamp": "2021-09-25T01:05:47.753+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "discord.gg/vNrEckQZAW",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891128470065774662",
+      "type": "Default",
+      "timestamp": "2021-09-25T01:06:23.63+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://prod.liveshare.vsengsaas.visualstudio.com/join?879883D01339923C1C28EA4891F696DF086A",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Join my Visual Studio Live Share session",
+          "url": "https://prod.liveshare.vsengsaas.visualstudio.com/join?879883D01339923C1C28EA4891F696DF086A",
+          "timestamp": null,
+          "description": "Real-time collaborative development",
+          "thumbnail": {
+            "url": "https://images-ext-2.discordapp.net/external/jxhyqQxAdddGOG-CKdtxT8jkv7JZxfkr9q5TTCL1ovA/https/aka.ms/vsls-logo",
+            "width": 900,
+            "height": 630
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891131245671632897",
+      "type": "Default",
+      "timestamp": "2021-09-25T01:17:25.386+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://discord.gg/f2N6MSHt",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891132071291027477",
+      "type": "Default",
+      "timestamp": "2021-09-25T01:20:42.229+00:00",
+      "timestampEdited": "2021-09-25T02:56:30.326+00:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://discordapp.com/oauth2/authorize?&client_id=891114706775994368&scope=bot&permissions=8",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891137237750808597",
+      "type": "Default",
+      "timestamp": "2021-09-25T01:41:14.009+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://discordjs.guide/creating-your-bot/",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Discord.js Guide",
+          "url": "https://discordjs.guide/creating-your-bot/",
+          "timestamp": null,
+          "description": "Imagine a guide... that explores the many possibilities for your discord.js bot.",
+          "color": "#3EAF7C",
+          "thumbnail": {
+            "url": "https://images-ext-2.discordapp.net/external/rliazFHuW8x_Rpb19v_nafy4b-mPWS3MXZb-ttRVZ0E/https/discordjs.guide/meta-image.png",
+            "width": 500,
+            "height": 500
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891137862618185781",
+      "type": "Default",
+      "timestamp": "2021-09-25T01:43:42.989+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://prod.liveshare.vsengsaas.visualstudio.com/join?1BCC4D493B644958F34B8498B5A7C2406493",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Join my Visual Studio Live Share session",
+          "url": "https://prod.liveshare.vsengsaas.visualstudio.com/join?1BCC4D493B644958F34B8498B5A7C2406493",
+          "timestamp": null,
+          "description": "Real-time collaborative development",
+          "thumbnail": {
+            "url": "https://images-ext-2.discordapp.net/external/jxhyqQxAdddGOG-CKdtxT8jkv7JZxfkr9q5TTCL1ovA/https/aka.ms/vsls-logo",
+            "width": 900,
+            "height": 630
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891139016429293598",
+      "type": "Default",
+      "timestamp": "2021-09-25T01:48:18.079+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "ODkxMTE0NzA2Nzc1OTk0MzY4.YU5pPg.z66WaVVjJyNngRaiVAFHTcxUI3A",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891143236603748453",
+      "type": "Default",
+      "timestamp": "2021-09-25T02:05:04.247+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "MLH Prize- Best use of Google Cloud\nBuild your hackathon project with a suite of secure storage, powerful compute, and integrated data analytics products provided by Google Cloud. See full list of products here: g.co/cloud. Each winning team member located in the US will receive a Google Cloud Swag Bag complete with a beanie, pillow, journal, socks and lanyards. International winners will receive a Google branded backpack.",
+      "author": {
+        "id": "891113015477407794",
+        "name": "Yusef rahimzada",
+        "discriminator": "4345",
+        "nickname": "Yusef rahimzada",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891143714112688198",
+      "type": "Default",
+      "timestamp": "2021-09-25T02:06:58.094+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://bigredhacks2021.devpost.com/",
+      "author": {
+        "id": "891113015477407794",
+        "name": "Yusef rahimzada",
+        "discriminator": "4345",
+        "nickname": "Yusef rahimzada",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Cornell BigRed//Hacks 2021",
+          "url": "https://bigredhacks2021.devpost.com/",
+          "timestamp": null,
+          "description": "Build the coolest and most innovative projects, meet amazing people, and win some prizes along the way!",
+          "thumbnail": {
+            "url": "https://images-ext-2.discordapp.net/external/mfShxH0AiY7DWIZHWxN3JypEmWojqjcXmUmHSq05Sqk/https/challengepost-s3-challengepost.netdna-ssl.com/photos/production/challenge_thumbnails/001/665/877/datas/original.png",
+            "width": 2048,
+            "height": 2048
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891152935298412637",
+      "type": "Default",
+      "timestamp": "2021-09-25T02:43:36.596+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://discord.com/api/oauth2/authorize?client_id=891114706775994368&permissions=0&redirect_uri=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&response_type=code&scope=guilds.join%20bot%20messages.read%20webhook.incoming%20applications.builds.read%20applications.commands%20applications.store.update%20applications.entitlements",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891156171837284352",
+      "type": "Default",
+      "timestamp": "2021-09-25T02:56:28.247+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "891113015477407794",
+        "name": "Yusef rahimzada",
+        "discriminator": "4345",
+        "nickname": "Yusef rahimzada",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+      },
+      "attachments": [
+        {
+          "id": "891156171577262090",
+          "url": "https://cdn.discordapp.com/attachments/891005511628124181/891156171577262090/IMG_0057.HEIC",
+          "fileName": "IMG_0057.HEIC",
+          "fileSizeBytes": 1263921
+        }
+      ],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891156174651686933",
+      "type": "Default",
+      "timestamp": "2021-09-25T02:56:28.918+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "891113015477407794",
+        "name": "Yusef rahimzada",
+        "discriminator": "4345",
+        "nickname": "Yusef rahimzada",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+      },
+      "attachments": [
+        {
+          "id": "891156174769111050",
+          "url": "https://cdn.discordapp.com/attachments/891005511628124181/891156174769111050/IMG_0056.HEIC",
+          "fileName": "IMG_0056.HEIC",
+          "fileSizeBytes": 1323241
+        }
+      ],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891156605524144209",
+      "type": "Default",
+      "timestamp": "2021-09-25T02:58:11.646+00:00",
+      "timestampEdited": "2021-09-25T02:58:20.362+00:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://discord.com/api/oauth2/authorize?client_id=891114706775994368&permissions=0&scope=bot%20applications.commands",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891312054043029524",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:15:53.461+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [
+        {
+          "id": "891312051190894602",
+          "url": "https://cdn.discordapp.com/attachments/891005511628124181/891312051190894602/image0.gif",
+          "fileName": "image0.gif",
+          "fileSizeBytes": 187535
+        }
+      ],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891312831700557874",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:18:58.869+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "@NQuackenboss google cloud functions can only use up to 8gb of ram, so probably not useful for inference",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "256910035852984320",
+          "name": "NQuackenboss",
+          "discriminator": "9404",
+          "nickname": "NQuackenboss",
+          "isBot": false
+        }
+      ]
+    },
+    {
+      "id": "891313763205120002",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:22:40.957+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Yeah I've started to notice that a lot of the \"normal\" ways to do things won't work with a 60GB model lol",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891313845103124500",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:23:00.483+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "lol",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891313983041175563",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:23:33.37+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Shouldn’t there be some preexisting script online for gpt j quantization just like we found ones for fine tuning and inference?",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891314136078745630",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:24:09.857+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "It would have to be compatible with the library that the scripts I used are from",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891314200436146197",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:24:25.201+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "So maybe, but doing that is not worth our time",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891314673281011812",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:26:17.936+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "If we post our bot for judges or hackathon people to try we’ll likely hit some Storage or bandwidth quotas quickly",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891316619714912308",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:34:02.002+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "It'll be fine",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891316773511655444",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:34:38.67+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Oh actually, yeah storage and bandwidth will be fine. Those both high some high default quotas if any.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891316951748587581",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:35:21.165+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Hmmm in my experience there’s always some obscure quota that ends up ruining it like “RAM hours” or something",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891317052210573313",
+      "type": "Reply",
+      "timestamp": "2021-09-25T13:35:45.117+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Fine for v1, we gotta get something working as fast as possible then we can optimize",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "256910035852984320",
+          "name": "NQuackenboss",
+          "discriminator": "9404",
+          "nickname": "NQuackenboss",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891316619714912308",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891317165846843423",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:36:12.21+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Lmk when you start heading over to the hackathon",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891318543008813157",
+      "type": "Reply",
+      "timestamp": "2021-09-25T13:41:40.551+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "This has also been my experience. Lots of weird quotas.",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891316951748587581",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891318646050291732",
+      "type": "Reply",
+      "timestamp": "2021-09-25T13:42:05.118+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Grabbing some food and then heading over",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": [
+        {
+          "id": "121768441215582208",
+          "name": "zaptrem",
+          "discriminator": "2617",
+          "nickname": "zaptrem",
+          "isBot": false
+        }
+      ],
+      "reference": {
+        "messageId": "891317165846843423",
+        "channelId": "891005511628124181",
+        "guildId": null
+      }
+    },
+    {
+      "id": "891318727008714762",
+      "type": "Default",
+      "timestamp": "2021-09-25T13:42:24.42+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Probably will be there at like 10:10",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891323185260286013",
+      "type": "Default",
+      "timestamp": "2021-09-25T14:00:07.35+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Hi running a bit late be there soon",
+      "author": {
+        "id": "891113015477407794",
+        "name": "Yusef rahimzada",
+        "discriminator": "4345",
+        "nickname": "Yusef rahimzada",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/embed/avatars/0.png"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891324511088152576",
+      "type": "Default",
+      "timestamp": "2021-09-25T14:05:23.452+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "I'm here",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891329190882848968",
+      "type": "Default",
+      "timestamp": "2021-09-25T14:23:59.202+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://github.com/Tyrrrz/DiscordChatExporter",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "GitHub - Tyrrrz/DiscordChatExporter: Exports Discord chat logs to a...",
+          "url": "https://github.com/Tyrrrz/DiscordChatExporter",
+          "timestamp": null,
+          "description": "Exports Discord chat logs to a file. Contribute to Tyrrrz/DiscordChatExporter development by creating an account on GitHub.",
+          "color": "#1E2327",
+          "thumbnail": {
+            "url": "https://images-ext-2.discordapp.net/external/fz2aJKYUWguGVGUcns5buYSWH0gUFOxf16Kdsl7d6g4/https/opengraph.githubassets.com/ebb0246028e0ac116061f13bf909ac4d2a6765024ffdc672c748f9c7a1b0c371/Tyrrrz/DiscordChatExporter",
+            "width": 1200,
+            "height": 600
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891335671413891112",
+      "type": "Default",
+      "timestamp": "2021-09-25T14:49:44.281+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://prod.liveshare.vsengsaas.visualstudio.com/join?98BFE76E83BAC2256D269F87908590F7D48E",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Join my Visual Studio Live Share session",
+          "url": "https://prod.liveshare.vsengsaas.visualstudio.com/join?98BFE76E83BAC2256D269F87908590F7D48E",
+          "timestamp": null,
+          "description": "Real-time collaborative development",
+          "thumbnail": {
+            "url": "https://images-ext-2.discordapp.net/external/jxhyqQxAdddGOG-CKdtxT8jkv7JZxfkr9q5TTCL1ovA/https/aka.ms/vsls-logo",
+            "width": 900,
+            "height": 630
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891345925790908456",
+      "type": "Default",
+      "timestamp": "2021-09-25T15:30:29.115+00:00",
+      "timestampEdited": "2021-09-25T15:42:59.369+00:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Endpoint: `http://<unknown>/predict`. Post JSON data like so:\n```\n{\n\"guild_id\": 3685163716512763825,\n\"prediction_data\": [\n    {\n         \"message\": \"this is a test\",\n         \"date\": 73864978632748362498,\n         \"username\": \"zaptrem#2617\"\n    }\n]\n}\n```",
+      "author": {
+        "id": "256910035852984320",
+        "name": "NQuackenboss",
+        "discriminator": "9404",
+        "nickname": "NQuackenboss",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/256910035852984320/37129b19b6a5a954e355093e857855d9.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891346602810282055",
+      "type": "Default",
+      "timestamp": "2021-09-25T15:33:10.529+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://github.com/Tyrrrz/DiscordChatExporter/wiki/GUI%2C-CLI-and-Formats-explained#using-the-cli",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "GUI, CLI and Formats explained · Tyrrrz/DiscordChatExporter Wiki",
+          "url": "https://github.com/Tyrrrz/DiscordChatExporter/wiki/GUI%2C-CLI-and-Formats-explained",
+          "timestamp": null,
+          "description": "Exports Discord chat logs to a file. Contribute to Tyrrrz/DiscordChatExporter development by creating an account on GitHub.",
+          "color": "#1E2327",
+          "thumbnail": {
+            "url": "https://images-ext-1.discordapp.net/external/mR_wkoMWoFV5sDrg3WApU-BwNl-RbfsWO1FwpVjrPC4/https/opengraph.githubassets.com/a79020825ecd98ffa6f847f5f7abef2578f9ce731e581e35fc4cbf941ea4e799/Tyrrrz/DiscordChatExporter",
+            "width": 1200,
+            "height": 600
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891353878866571296",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:02:05.276+00:00",
+      "timestampEdited": "2021-09-25T16:05:04.791+00:00",
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "```\n{\n“guildId” : 19280391820938,\n“username” : “zaptrem,\n“context”: [\n    {\n         \"message\": \"this is a test\",\n         \"date\": 73864978632748362498,\n         \"username\": \"zaptrem\"\n     },\n    {\n         \"message\": \"this is a test\",\n         \"date\": 73864978632748362498,\n         \"username\": \"zaptrem\"\n     }\n]\n}\n```",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891354807363846196",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:05:46.647+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "^ Inference",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891355437478330430",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:08:16.878+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://prod.liveshare.vsengsaas.visualstudio.com/join?723DCB2A558F9BADB491A4E8C9361578A9FF",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Join my Visual Studio Live Share session",
+          "url": "https://prod.liveshare.vsengsaas.visualstudio.com/join?723DCB2A558F9BADB491A4E8C9361578A9FF",
+          "timestamp": null,
+          "description": "Real-time collaborative development",
+          "thumbnail": {
+            "url": "https://images-ext-2.discordapp.net/external/jxhyqQxAdddGOG-CKdtxT8jkv7JZxfkr9q5TTCL1ovA/https/aka.ms/vsls-logo",
+            "width": 900,
+            "height": 630
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891355605372133387",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:08:56.907+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://prod.liveshare.vsengsaas.visualstudio.com/join?4166EA3E674F46841BD089F1AD0211B055D0",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "Join my Visual Studio Live Share session",
+          "url": "https://prod.liveshare.vsengsaas.visualstudio.com/join?4166EA3E674F46841BD089F1AD0211B055D0",
+          "timestamp": null,
+          "description": "Real-time collaborative development",
+          "thumbnail": {
+            "url": "https://images-ext-2.discordapp.net/external/jxhyqQxAdddGOG-CKdtxT8jkv7JZxfkr9q5TTCL1ovA/https/aka.ms/vsls-logo",
+            "width": 900,
+            "height": 630
+          },
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891361447588823160",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:32:09.8+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "https://www.codegrepper.com/code-examples/javascript/delete+discord.js+slash+command",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [
+        {
+          "title": "delete discord.js slash command Code Example",
+          "url": "https://www.codegrepper.com/code-examples/javascript/delete+discord.js+slash+command",
+          "timestamp": null,
+          "description": "//Delete command globally:\nclient.api.applications(client.user.id).commands(\"command-id (interaction.data.id)\").delete(); \n\n//Delete for specific guild(s):\nclient.api.applications(client.user.id).guilds(\"guild-id(s)\").commands(\"command-id (interaction.data.id)\").delete();",
+          "color": "#FFFFFF",
+          "fields": []
+        }
+      ],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891365469313986610",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:48:08.654+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Would you guys be interested in joining me going to Five Guys for late lunch after we all get back?",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891365552663179334",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:48:28.526+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "depends how late",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891365590575505408",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:48:37.565+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "for me it would be more like dinner",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891365609827352616",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:48:42.155+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "i did just eat two of those wraps",
+      "author": {
+        "id": "157845259278090240",
+        "name": "Farler",
+        "discriminator": "7853",
+        "nickname": "Farler",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/157845259278090240/bb05114dd2bf2fad82abd0d29ba30bf7.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "891365716278779965",
+      "type": "Default",
+      "timestamp": "2021-09-25T16:49:07.535+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Like 3-4pm",
+      "author": {
+        "id": "121768441215582208",
+        "name": "zaptrem",
+        "discriminator": "2617",
+        "nickname": "zaptrem",
+        "color": null,
+        "isBot": false,
+        "avatarUrl": "https://cdn.discordapp.com/avatars/121768441215582208/671034afa5edc66517258cdf7002a31b.png?size=128"
+      },
+      "attachments": [],
+      "embeds": [],
+      "reactions": [],
+      "mentions": []
+    }
+  ],
+  "messageCount": 156
+}
+
+"""
+main(json_file)
