@@ -7,7 +7,7 @@ const { clientId, guildId, token } = require('./config.json');
 // i.e. the list of commands users can use with the bot
 const commands = [
 	new SlashCommandBuilder().setName('serverinfo').setDescription('Get information such as when the bot was last trained for this server, and more.'),
-	new SlashCommandBuilder().setName('setuser').setDescription('TODO: Set the bot to impersonate a specific user.')
+	new SlashCommandBuilder().setName('setuser').setDescription('Set the bot to impersonate a specific user whenever someone pings them.')
 		.addUserOption(option => option.setName('user').setDescription('the user to impersonate').setRequired(true)),
 	new SlashCommandBuilder().setName('sus').setDescription('Tell the bot to send a single message as this user')
 		.addUserOption(option => option.setName('user').setDescription('the user to impersonate').setRequired(true)),
@@ -18,6 +18,8 @@ const commands = [
 		.addChannelOption(option => option.setName('channel4').setDescription('4th channel'))
 		.addChannelOption(option => option.setName('channel5').setDescription('5th channel')),
 	new SlashCommandBuilder().setName('stop').setDescription('Stop the bot from actively impersonating anyone.'),
+	new SlashCommandBuilder().setName('monologue').setDescription('Have the bot continue the conversation for you!')
+		.addUserOption(option => option.setName('user').setDescription('the user who will begin the conversation').setRequired(true))
 ]
 	.map(command => command.toJSON());
 
