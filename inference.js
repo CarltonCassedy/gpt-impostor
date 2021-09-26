@@ -45,7 +45,7 @@ exports.inference = async (interaction) => {
 
     prompt = prompt + interaction.options.get('user', true).user.username + ":";
 
-    const conversationMode = (interaction === 'monologue')
+    const conversationMode = (interaction.commandName === 'monologue')
 
     const data = new TextEncoder().encode(
         JSON.stringify({
@@ -80,7 +80,23 @@ exports.inference = async (interaction) => {
             console.log(objects)
             let messages = objects.generated_text.split('\n')
 
-            response(interaction, messages[0])
+            response(
+                    interaction.channel, 
+                    interaction.options.get('user', true).user.username, 
+                    interaction.options.get('user', true).user.avatarURL(), 
+                    messages[0])
+            
+            if (conversationMode) {
+                console.log("looping through generated text...")
+                for (i = 1; i < messages.length; i++){
+                    response(
+                        interaction.channel,
+                        messages[i].split(':')[0],
+                        'https://i.imgur.com/AfFp7pu.png',
+                        messages[i].split(':')[1]
+                    )
+                }
+            }
         })
     })
 

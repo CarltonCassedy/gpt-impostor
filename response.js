@@ -6,23 +6,26 @@ const { MessageEmbed } = require('discord.js');
 
 
 // Steals user's name and icon then sends message. 
-exports.response = async (interaction, message) => {
+exports.response = async (channel, username, userAvatarURL, message) => {
     //let icon = interaction.options.getUser().user.avatarURL();
     console.log("Starting response");
     /*const embed = new MessageEmbed()
         .setTitle('Some Title')
         .setColor('#0099ff');*/
 
-    interaction.channel.createWebhook('Some-username', {
+    channel.createWebhook('Some-username', {
         avatar: 'https://i.imgur.com/AfFp7pu.png',
     })
         .then( async (webhook) => {
-            console.log(`Created webhook ${webhook}`)
+            //console.log(`Created webhook ${webhook}`)
+            if (message === '' || username === '') {
+                return;
+            }
             await webhook.send({
                 content: message,
-                username: interaction.options.get('user', true).user.username,
-                avatarURL: interaction.options.get('user', true).user.avatarURL(),
-            });
+                username: username,
+                avatarURL: userAvatarURL,
+            }).catch( () => console.log("empty msg/full webhooks pog"));
 
             webhook.delete()
         

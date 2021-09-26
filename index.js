@@ -31,6 +31,10 @@ client.on('interactionCreate', async interaction => {
 		console.log(await interaction.options.get('user', true).user.username);
 
 		//await interaction.reply("sus");
+	} else if (commandName === 'monologue') {
+		inference(interaction);
+		console.log("Conversation mode in progress")
+
 	} else if (commandName === 'setuser') {
 		//await interaction.reply('Server info.');
 		//response(interaction, "test message");
@@ -63,7 +67,7 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
-client.on('message', (message) => {
+client.on('messageCreate', (message) => {
 	console.log("On message");
 	if (message.mentions.users.has(replyingForUserId) && !message.author.bot) {
 		message.reply(`my prefix here is ${prefix}`)
