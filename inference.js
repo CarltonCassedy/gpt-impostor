@@ -1,6 +1,14 @@
 const http = require('http')
 const { response } = require('./response.js');
 
+
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }
 // Get most recent 600 words.
 // Get 50 most recent chat messages
 // Reduce the array and stop adding when we reach 600 words
@@ -76,6 +84,7 @@ exports.inference = async (interaction) => {
         console.log(`statusCode: ${res.statusCode}`)
 
         res.on('data', d => {
+            console.log(d.toString)
             let objects = JSON.parse(d.toString())[0]
             console.log(objects)
             let messages = objects.generated_text.split('\n')
@@ -88,7 +97,8 @@ exports.inference = async (interaction) => {
             
             if (conversationMode) {
                 console.log("looping through generated text...")
-                for (i = 1; i < messages.length; i++){
+                for (i = 1; i < messages.length && i < 10 ; i++){
+                    sleep(250);
                     response(
                         interaction.channel,
                         messages[i].split(':')[0],
